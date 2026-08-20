@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ru" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EGL | Баннеры & Спонсоры</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            neutral: {
+              950: '#0a0a0a',
+              900: '#121212',
+              850: '#181818',
+              800: '#222222',
+              750: '#2a2a2a',
+              700: '#333333',
+              600: '#525252',
+              500: '#737373',
+              400: '#a3a3a3',
+              300: '#d4d4d4',
+              200: '#e5e5e5',
+              100: '#f5f5f5'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            display: ['Space Grotesk', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-[#0f0f0f] text-neutral-100 font-sans antialiased min-h-screen selection:bg-white selection:text-black flex flex-col">
+
+  
+  <div class="bg-[#141414] border-b border-neutral-800 text-xs py-2 px-4">
+    <div class="max-w-[1600px] mx-auto flex items-center justify-between">
+      <div class="flex items-center space-x-3 overflow-hidden">
+        <span class="bg-white text-black font-bold px-2 py-0.5 rounded text-[11px] uppercase tracking-wider">
+          EGL MEDIA & SPONSORS
+        </span>
+        <div class="text-neutral-400 truncate">
+          <span>Официальный каталог промо-материалов, постеров чемпионов и спонсора CaseHunt</span>
+        </div>
+      </div>
+      <div class="hidden md:flex items-center space-x-4 text-neutral-400 text-[11px]">
+        <span id="headerTime">20:15 CET</span>
+      </div>
+    </div>
+  </div>
+
+  
+  <header class="bg-[#121212] border-b border-neutral-800 sticky top-0 z-40">
+    <div class="max-w-[1600px] mx-auto px-4 py-3 flex items-center justify-between">
+      
+      
+      <div class="flex items-center space-x-8">
+        <a href="index.html" class="flex items-center space-x-3 group">
+          <img src="assets/egl_logo.png" alt="EGL Logo" class="w-10 h-10 object-contain rounded-lg">
+          <div>
+            <div class="font-display font-bold text-lg text-white tracking-wider leading-none">
+              EGL LEAGUE
+            </div>
+            <span class="text-[10px] text-neutral-500 uppercase tracking-widest block mt-0.5">Europe Gaming League</span>
+          </div>
+        </a>
+
+        
+        <nav class="hidden lg:flex items-center space-x-1 text-xs font-semibold">
+          <a href="index.html" class="nav-link px-3.5 py-2 rounded-lg text-neutral-400 hover:text-white">
+            Главная
+          </a>
+          <a href="banners.html" class="nav-link active px-3.5 py-2 rounded-lg text-white">
+            Баннеры & Спонсоры
+          </a>
+          <a href="matches.html" class="nav-link px-3.5 py-2 rounded-lg text-neutral-400 hover:text-white">
+            Матчи & Результаты
+          </a>
+          <a href="tournaments.html" class="nav-link px-3.5 py-2 rounded-lg text-neutral-400 hover:text-white">
+            Турниры & Сетка
+          </a>
+          <a href="rankings.html" class="nav-link px-3.5 py-2 rounded-lg text-neutral-400 hover:text-white">
+            Рейтинг команд
+          </a>
+          <a href="stats.html" class="nav-link px-3.5 py-2 rounded-lg text-neutral-400 hover:text-white">
+            Статистика
+          </a>
+          <a href="forum.html" class="nav-link px-3.5 py-2 rounded-lg text-neutral-400 hover:text-white">
+            Форум
+          </a>
+        </nav>
+      </div>
+
+      
+      <div class="flex items-center space-x-3">
+        <button onclick="openAuthModal()" class="px-4 py-1.5 rounded-lg bg-white hover:bg-neutral-200 text-black font-bold text-xs transition">
+          <span id="authBtnLabel">Личный кабинет</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  
+  <main class="flex-grow max-w-[1600px] w-full mx-auto px-4 py-6">
+    
+    
+    <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6 pb-4 border-b border-neutral-800">
+      <div>
+        <h1 class="font-display font-bold text-2xl sm:text-3xl text-white">
+          Баннеры, Спонсоры & Постеры Лиги
+        </h1>
+        <p class="text-xs sm:text-sm text-neutral-400 mt-1">
+          Официальные постеры победителей EGL Season 1, баннер генерального спонсора CaseHunt и промокоды.
+        </p>
+      </div>
+
+      
+      <div class="flex flex-wrap items-center gap-1.5">
+        <button onclick="filterBanners('all')" id="banner-tab-all" class="banner-tab-btn px-3.5 py-1.5 rounded-lg bg-white text-black font-bold text-xs border border-white transition">
+          Все
+        </button>
+        <button onclick="filterBanners('sponsors')" id="banner-tab-sponsors" class="banner-tab-btn px-3.5 py-1.5 rounded-lg bg-neutral-900 text-neutral-400 font-semibold text-xs border border-neutral-800 hover:text-white transition">
+          Спонсор CaseHunt
+        </button>
+        <button onclick="filterBanners('tournaments')" id="banner-tab-tournaments" class="banner-tab-btn px-3.5 py-1.5 rounded-lg bg-neutral-900 text-neutral-400 font-semibold text-xs border border-neutral-800 hover:text-white transition">
+          Чемпионы & MVP
+        </button>
+        <button onclick="filterBanners('media')" id="banner-tab-media" class="banner-tab-btn px-3.5 py-1.5 rounded-lg bg-neutral-900 text-neutral-400 font-semibold text-xs border border-neutral-800 hover:text-white transition">
+          Медиа & Discord
+        </button>
+      </div>
+    </div>
+
+    
+    <div id="bannersGrid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+      
+    </div>
+
+  </main>
+
+  <div id="authModal" class="hidden fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-[#141414] border border-neutral-700 rounded-2xl max-w-md w-full p-6 text-center shadow-2xl">
+      <div class="w-12 h-12 rounded-xl bg-neutral-800 text-white mx-auto flex items-center justify-center mb-3">
+        <i data-lucide="shield" class="w-6 h-6"></i>
+      </div>
+      <h3 class="font-display font-bold text-lg text-white">Авторизация</h3>
+      <p class="text-xs text-neutral-400 mt-1 mb-4">Вход через Steam для игроков лиги.</p>
+      <button onclick="simulateSteamLogin()" class="w-full py-2.5 rounded-lg bg-white hover:bg-neutral-200 text-black font-bold text-xs transition">
+        Войти через Steam
+      </button>
+      <button onclick="closeModals()" class="mt-3 text-xs text-neutral-500 hover:text-white">Закрыть</button>
+    </div>
+  </div>
+
+  
+  <footer class="bg-[#0c0c0c] border-t border-neutral-800 mt-12 py-8 px-4 text-xs text-neutral-500">
+    <div class="max-w-[1600px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div>
+        <div class="flex items-center space-x-2">
+          <span class="font-display font-bold text-lg text-white">EGL</span>
+          <span class="text-[10px] text-neutral-400 uppercase tracking-wider">Europe Gaming League</span>
+        </div>
+        <p class="text-neutral-500 text-[11px] mt-0.5">Официальный соревновательный портал Counter-Strike 2.</p>
+      </div>
+      <div class="flex items-center space-x-4 text-xs text-neutral-400">
+        <a href="index.html" class="hover:text-white transition">Главная</a>
+        <a href="banners.html" class="text-white font-semibold transition">Баннеры</a>
+        <a href="matches.html" class="hover:text-white transition">Матчи</a>
+        <a href="tournaments.html" class="hover:text-white transition">Турниры</a>
+        <a href="rankings.html" class="hover:text-white transition">Рейтинг</a>
+        <a href="stats.html" class="hover:text-white transition">Статистика</a>
+        <a href="forum.html" class="hover:text-white transition">Форум</a>
+      </div>
+    </div>
+  </footer>
+
+  
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
